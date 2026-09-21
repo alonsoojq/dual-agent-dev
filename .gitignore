@@ -1,0 +1,16 @@
+# These rules protect local artifacts of THIS skill repository only.
+# They do not apply to target repositories using the globally installed skill.
+# Never silently edit a target repository's .gitignore.
+# Coordination and private context if this checkout is itself a target project.
+/.dual-agent/
+/.dual-agent-context.local.md
+# Python checks can create these caches; none belong in the distribution.
+__pycache__/
+*.py[cod]
+# Accidental local credentials and editor/recovery artifacts.
+.env
+.env.*
+!.env.example
+*.bak
+*.bak-*
+*~

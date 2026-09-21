@@ -1,0 +1,37 @@
+[
+  {
+    "name": "development",
+    "valid": true,
+    "state": "task: Add bounded feature\nbranch: feature/example\narchitect: Model A\nimplementer: Model B\nstage: implementation\nturn: implementer\ncycle: 1\n\n## Baseline\n- Local revision, clean.\n"
+  },
+  {
+    "name": "active-audit",
+    "valid": true,
+    "state": "task: Inspect public boundary\nbranch: none\narchitect: Model A\nimplementer: Model B\nstage: investigation\nturn: architect\ncycle: 1\nworkflow: audit\naudit_program: docs/audits/example/PROGRAM.md\naudit_phase: reading\naudit_baseline: manifest example\n"
+  },
+  {
+    "name": "future-optional-field",
+    "valid": true,
+    "state": "task: Review\nbranch: none\narchitect: Model A\nimplementer: Model B\nstage: review\nturn: architect\ncycle: 2\nfuture_note: preserved\n"
+  },
+  {
+    "name": "invalid-audit-repair",
+    "valid": false,
+    "state": "task: Audit\nbranch: none\narchitect: Model A\nimplementer: Model B\nstage: implementation\nturn: implementer\ncycle: 1\nworkflow: audit\naudit_phase: reading\n"
+  },
+  {
+    "name": "invalid-third-owner",
+    "valid": false,
+    "state": "task: Audit\nbranch: none\narchitect: Model A\nimplementer: Model B\nstage: investigation\nturn: scout\ncycle: 1\n"
+  },
+  {
+    "name": "duplicate-turn",
+    "valid": false,
+    "state": "task: Build\nbranch: none\narchitect: A\nimplementer: B\nstage: review\nturn: architect\nturn: implementer\ncycle: 1\n"
+  },
+  {
+    "name": "finished-audit",
+    "valid": true,
+    "state": "task: Audit\nbranch: none\narchitect: A\nimplementer: B\nstage: done\nturn: user\ncycle: 1\nworkflow: audit\naudit_program: docs/audits/example/PROGRAM.md\naudit_phase: complete\naudit_baseline: manifest example\n"
+  }
+]

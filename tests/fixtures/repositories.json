@@ -1,0 +1,66 @@
+{
+  "typescript-web": {
+    "git": true,
+    "files": {
+      "package.json": "{\"private\":true,\"scripts\":{\"check\":\"tsc --noEmit\"}}\n",
+      "src/view.ts": "export function greeting(name: string): string { return `<h1>Hello ${name}</h1>`; }\n",
+      "README.md": "Browser display helper. Consumer must treat the result as text, not trusted HTML.\n",
+      "tsconfig.json": "{\"compilerOptions\":{\"strict\":true,\"noEmit\":true},\"include\":[\"src\"]}\n"
+    }
+  },
+  "python-backend": {
+    "git": true,
+    "files": {
+      "pyproject.toml": "[project]\nname = \"sample-service\"\nversion = \"0.1.0\"\nrequires-python = \">=3.9\"\n",
+      "app/endpoint.py": "def handle(payload):\n    quantity = int(payload[\"quantity\"])\n    return {\"total\": quantity * 5}\n",
+      "CONTRACT.md": "Input quantity must be an integer from 1 through 20. Invalid input returns a structured error. This function is the public service boundary.\n",
+      "tests/test_endpoint.py": "from app.endpoint import handle\n\ndef test_one():\n    assert handle({\"quantity\": 1}) == {\"total\": 5}\n"
+    }
+  },
+  "go-cli": {
+    "git": true,
+    "files": {
+      "go.mod": "module example.invalid/tool\n\ngo 1.20\n",
+      "main.go": "package main\nimport (\"fmt\"; \"os\")\nfunc main() { if len(os.Args) < 2 { fmt.Fprintln(os.Stderr, \"missing argument\"); os.Exit(2) }; fmt.Println(os.Args[1]) }\n",
+      "README.md": "Print one argument to stdout. Missing argument exits 2 and writes a diagnostic to stderr. No network or persistent storage.\n"
+    }
+  },
+  "monorepo": {
+    "git": true,
+    "files": {
+      "package.json": "{\"private\":true,\"workspaces\":[\"apps/*\",\"packages/*\"]}\n",
+      "apps/cli/package.json": "{\"name\":\"sample-cli\",\"private\":true,\"dependencies\":{\"sample-math\":\"*\"}}\n",
+      "apps/cli/main.js": "const { total } = require(\"sample-math\");\nconsole.log(total(Number(process.argv[2])));\n",
+      "packages/math/package.json": "{\"name\":\"sample-math\",\"version\":\"1.0.0\",\"main\":\"index.js\"}\n",
+      "packages/math/index.js": "exports.total = quantity => quantity * 3;\n",
+      "docs/contract.md": "The CLI accepts positive integer quantities. The math package is also a separately consumed public API and accepts finite nonnegative quantities.\n"
+    }
+  },
+  "scientific-no-git": {
+    "git": false,
+    "files": {
+      "analysis.py": "def mean(values):\n    return sum(values) / len(values)\n",
+      "METHOD.md": "Inputs are measurements in kelvin. Empty samples must be reported as unavailable. The data source and calibration are external and not included.\n",
+      "measurements.csv": "run,kelvin\n1,280\n2,290\n"
+    }
+  },
+  "rust-library": {
+    "git": true,
+    "files": {
+      "Cargo.toml": "[package]\nname = \"sample-bound\"\nversion = \"0.1.0\"\nedition = \"2021\"\n",
+      "src/lib.rs": "/// True when value lies in the inclusive range.\npub fn within(value: i32, low: i32, high: i32) -> bool {\n    value >= low && value < high\n}\n",
+      "README.md": "Public within uses inclusive bounds. No database, server or I/O.\n"
+    }
+  },
+  "embedded-assets": {
+    "git": false,
+    "files": {
+      "src/buffer.c": "#include <stddef.h>\nstatic unsigned char buffer[8];\nvoid store(size_t index, unsigned char value) { buffer[index] = value; }\n",
+      "include/buffer.h": "#include <stddef.h>\nvoid store(size_t index, unsigned char value);\n",
+      "README.md": "Board firmware fragment. store is called by an interrupt handler not supplied here. Caller index constraints and hardware behavior are unknown. Calibration asset format requires board tooling.\n"
+    },
+    "binary_hex": {
+      "assets/calibration.bin": "0001ff807f0203fe"
+    }
+  }
+}
