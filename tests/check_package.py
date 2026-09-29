@@ -270,7 +270,7 @@ class PackageChecks(unittest.TestCase):
 
     def test_behavioral_scenarios_retained(self):
         self.assertEqual(re.findall(r"(?m)^## (\d+)\. ", read("tests/scenarios.md")),
-                         [str(i) for i in range(1, 22)])
+                         [str(i) for i in range(1, 28)])
         self.assertEqual(re.findall(r"(?m)^## A(\d+) — ", read("tests/audit-scenarios.md")),
                          [f"{i:02d}" for i in range(1, 31)])
         self.assertIn("not", read("VALIDATION.md").lower())
@@ -281,6 +281,23 @@ class PackageChecks(unittest.TestCase):
             text = p.read_text(encoding="utf-8")
             self.assertIn("Optional handoff note", text)
             self.assertNotRegex(text, r"\b\d[\d,]*[kKM]?-token\b")
+
+    def test_model_notes_share_structure_and_cite_registered_sources(self):
+        sources = read("references/sources.md")
+        registered = set(re.findall(r"(?m)^\| ([SU]\d+) \|", sources))
+        self.assertIn("Consulted", sources)
+        index = read("references/model-selection.md")
+        for p in (ROOT / "references" / "models").glob("*.md"):
+            text = p.read_text(encoding="utf-8")
+            with self.subTest(note=p.name):
+                self.assertIn("models/" + p.name, index)
+                for heading in ("## Identity and positioning", "## Consider for",
+                                "## Fit less clear when", "## Handoff adaptations",
+                                "## Resources and latency", "## Effort by interface",
+                                "## Unknowns"):
+                    self.assertIn(heading, text)
+                cited = set(re.findall(r"\b([SU]\d+)\b", text))
+                self.assertTrue(cited <= registered, sorted(cited - registered))
 
     def test_documented_commands_match_contract(self):
         def table_commands(name):

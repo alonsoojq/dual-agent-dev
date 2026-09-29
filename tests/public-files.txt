@@ -18,11 +18,14 @@ references/coordination.md
 references/maintenance.md
 references/model-selection.md
 references/models/claude-opus-4-8.md
+references/models/claude-opus-5-5.md
 references/models/claude-opus-5.md
 references/models/gemini-3.8-flash.md
 references/models/gpt-5.3-codex-spark.md
 references/models/gpt-5.6-sol.md
 references/models/gpt-6-astra.md
+references/models/gpt-6-luna.md
+references/models/gpt-6-sol.md
 references/sources.md
 references/workflow.md
 templates/AUDIT-PROGRAM.md

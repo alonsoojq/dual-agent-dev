@@ -184,16 +184,18 @@ run, unresolved risks, and the next decision. State the actual target model;
 keep any suggested replacement separate and explicitly advisory.
 
 **Model recommendation for the next phase (required when the handoff starts work).**
-Classify the phase with the routing table in [Model selection](references/model-selection.md),
-name the recommended available model and effort, explain the capability/resource
-tradeoff briefly, and say whether it matches the currently assigned
+Classify the phase with [Model selection](references/model-selection.md) and
+recommend one configuration — available model, effort and interface together —
+with a brief capability/resource tradeoff and one observable condition to
+reconsider it. Say whether it matches the currently assigned
 model or proposes a switch pending approval. A correction cycle, a review, and the
 original implementation are different phases and may warrant different models.
 Keeping the same model is valid when it remains appropriate; explain the fit.
 
 Recommend a provider-native effort value only when supported by the actual
 client. Otherwise use `client-default` or `verify-in-client`; never invent an
-API parameter. Include a short rationale rather than a universal maximum.
+API parameter or translate effort labels across providers, models or clients.
+Include a short rationale rather than a universal maximum or minimum.
 
 In audit blind-reading phases, shared state and handoff updates contain neutral
 progress only; detailed candidates remain in the reader's separate saved artifact

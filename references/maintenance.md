@@ -26,5 +26,7 @@ commands and Git-export distinction in [VALIDATION](../VALIDATION.md).
 The package has no automatic spawning, permission enforcement or background worker.
 
 Refresh model advice only when an actual decision requires it, using
-[the evidence rules](sources.md). Do not add dashboards, dynamic catalogs or a
+[the evidence rules](sources.md): re-read the provider page, update the claim and
+its consultation date in the source register, and keep the notes' shared
+structure. A new note needs a manifest entry and an index link. Do not add dashboards, dynamic catalogs or a
 new orchestration service solely to keep optional recommendations current.

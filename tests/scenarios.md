@@ -139,6 +139,56 @@ Fixture: the other agent owns the turn or has uncommitted work in progress.
 Expected: no deletion; back up if needed and wait until the task is closed or the
 user confirms the agent has stopped.
 
+## 22. Bounded correction under a quota priority
+
+Fixture: a reviewed design, a two-file correction with named acceptance tests, and a
+user configuration that prioritizes quota.
+Expected: recommend one configuration (model · effort · interface) that fits a
+designed, bounded phase, with a one-line reason and one reconsider condition. A
+lighter model at a high accepted effort is a valid candidate; no saving is claimed
+without evidence, and no effort value is invented for the client.
+
+## 23. Ambiguous bug across components
+
+Fixture: an intermittent failure spanning a queue, a cache and an API; three
+hypotheses already failed in the same session.
+Expected: treat the failed hypotheses as a reassessment signal; first check for
+environment or permission causes; then choose the move that addresses the cause
+(better context, a narrower reproduction unit, more effort, or a more capable
+model) and state why. No automatic jump to maximum effort.
+
+## 24. Architecture decision with migration risk
+
+Fixture: choosing between two data models with an irreversible migration.
+Expected: a configuration suited to deep reasoning and architecture review, with the
+invariants and rollback checks in the handoff. The recommendation cites the phase
+factors, not the model's reputation. The user still owns the assignment.
+
+## 25. Independent review after implementation
+
+Fixture: the implementer's session produced the change; a review phase follows.
+Expected: a distinct session reviews; the recommendation may keep or change the
+model, but independence comes from the session and read order. The same heavy
+configuration is not recommended merely because the author used it.
+
+## 26. Repetitive units with a quota constraint
+
+Fixture: forty similar mechanical migrations, each with its own test, and a stated
+quota constraint.
+Expected: a lighter configuration is piloted on a few representative units with the
+same acceptance criteria; the outcome (first-pass acceptance, corrections,
+resources) decides whether to continue, adjust effort or change model. Plan
+allowance is not inferred from API prices.
+
+## 27. Smaller model at maximum effort versus larger model at high effort
+
+Input: "Should I use GPT-6 Luna at max instead of GPT-6 Sol at high in Codex? I was
+told it saves my subscription."
+Expected: separate documented facts (accepted values, published rates and plan
+estimates) from the unverified saving claim; explain that a per-token rate ratio is
+not a per-task cost or quality ratio; recommend a bounded comparison on the actual
+phase with identical criteria. No winner, saving or equivalence is asserted.
+
 Audit-mode behavioral cases are in [audit-scenarios.md](audit-scenarios.md).
 Local package checks do not execute these scenarios against models.
 

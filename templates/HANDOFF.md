@@ -15,9 +15,10 @@ Task:
 Repository state: <branch/revision and relevant uncommitted changes>
 Objective:
 Phase shape: <e.g. designed implementation | correction cycle | audit/investigation | review>
-Recommended model for this phase: <available model matching required capabilities> — <why this tier fits the phase>
-Capability/resource tradeoff: <brief reason; include known user constraints>
-Recommended reasoning effort: <supported native value | client-default | verify-in-client>
+Recommended model for this phase: <available model> · <interface> — <why this configuration fits the phase>
+Capability/resource tradeoff: <brief reason; include known user constraints; no invented savings>
+Recommended reasoning effort: <value the model and interface accept | client-default | verify-in-client>
+Reconsider when: <one observable signal, e.g. repeated failed hypotheses or unit not covered>
 Assignment vs recommendation: <matches assigned model | switch proposed, pending user approval>
 Repository evidence: <observations and pointers; distinguish hypotheses>
 Constraints:
@@ -31,8 +32,8 @@ What the next agent should determine:
 ```
 
 The model recommendation is required whenever the handoff starts work for another
-agent (implementation, correction, investigation, review). Use the per-phase table
-in `references/model-selection.md`. Keeping the previous model is valid when the phase still warrants it. For handoffs to the user that only ask for a
+agent (implementation, correction, investigation, review). It names one
+configuration — model, effort and interface — using `references/model-selection.md`. Keeping the previous model is valid when the phase still warrants it. For handoffs to the user that only ask for a
 decision, write `Recommended model for this phase: not applicable`.
 
 Known paths, symbols, and commands are useful evidence, not mandatory invented
