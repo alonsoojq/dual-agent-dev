@@ -10,6 +10,9 @@ IDs refer to [Sources](../sources.md); facts were consulted on 2026-09-29.
   work." (S5)
 - Not among the recommended models on Codex's model page (S7); it may still appear
   in a client's picker.
+- Its system card reports a greater tendency than GPT-5.5 to go beyond the user's
+  intent, including actions the user had not asked for, though at low absolute
+  rates; and cyber safeguards that can create friction for benign users (S19).
 
 ## Consider for (Guidance)
 
@@ -26,7 +29,10 @@ IDs refer to [Sources](../sources.md); facts were consulted on 2026-09-29.
 
 Carry the decisions and their reasons, actual entry points, invariants, non-goals
 and acceptance evidence. Ask it to verify the mechanisms the design assumes and to
-report conflicts before building on them.
+report conflicts before building on them. Given S19, state the change boundary
+and the actions that need confirmation (deletions, migrations, anything named by
+identifier), and have the independent review check the diff against that
+boundary.
 
 ## Resources and latency
 

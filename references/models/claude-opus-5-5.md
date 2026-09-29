@@ -12,6 +12,12 @@ IDs refer to [Sources](../sources.md); facts were consulted on 2026-09-29.
   Opus model, released 2026-09-22 (S18).
 - Adaptive thinking is always on; effort is the main control of reasoning depth
   and cost (S11).
+- Provider-reported behavior (S20): strongest on multistep work in a real
+  repository, such as carrying a change until its tests pass, and on long
+  autonomous audits and migrations; early testers report stronger code review
+  than Opus 5, with more bugs caught and fewer false alarms; much less likely to
+  state a wrong figure or cite the wrong source; reports say plainly what it did,
+  found and needs. Safety classifiers cover more categories than Opus 5's (S21).
 
 ## Consider for (Guidance)
 
@@ -31,6 +37,17 @@ IDs refer to [Sources](../sources.md); facts were consulted on 2026-09-29.
 For architecture or review, carry system constraints, compatibility invariants and
 the acceptable change boundary, and let it review the actual implementation in
 context. Exact signatures are needed only when a real contract requires them.
+
+- Re-evaluate instructions written for an earlier model's verbosity,
+  over-verification or scope; keep only those this task needs (S21).
+- A turn that ends in text is a report, not proof the phase is done; keep the
+  phase's parts in a checklist and name open items (S20).
+- Progress notes between tool calls can look silent in some clients (S20); check
+  the session's state before treating it as stalled.
+- For interface work, name the specific visual patterns to avoid rather than
+  asking generally for a non-generic look (S20).
+- A safeguard refusal on a legitimate task is a routing fact (see
+  [model selection](../model-selection.md#reassessment-signals)).
 
 ## Resources and latency
 

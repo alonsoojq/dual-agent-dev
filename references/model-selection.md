@@ -150,7 +150,9 @@ Signals that the configuration may not fit:
 
 Not configuration signals: missing permissions, a broken environment, tool or
 network outages, missing credentials, flaky tests or incomplete requirements.
-Fix or escalate those first; switching models will not help.
+Fix or escalate those first; switching models will not help. A provider safeguard
+declining a legitimate task is a routing fact, not a capability signal: record it
+and reassign with the user's approval; never reword the request to evade it.
 
 On a real signal, choose the cheapest move from the list above that addresses the
 observed cause. Preserve partial work before any reassignment and confirm the

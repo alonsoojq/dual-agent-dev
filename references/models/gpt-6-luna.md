@@ -35,7 +35,9 @@ Pilot it on a bounded unit, or pair it with a stronger independent review.
 
 State decisions with their reasons, the invariants, non-goals and acceptance
 checks. Name the entry points found so far without prescribing the code. Ask it to
-report design conflicts rather than resolve them silently.
+report design conflicts rather than resolve them silently. For repeated units,
+keep one evidence and report schema so results consolidate without guessing what
+was examined.
 
 ## Resources and latency
 

@@ -33,8 +33,13 @@ IDs refer to [Sources](../sources.md); facts were consulted on 2026-09-29.
 
 For a deep investigation, carry observed behavior, competing hypotheses, source
 boundaries and the evidence that would settle the question. Let repository
-evidence revise the plan. State which decisions are already authorized and which
-checks suffice, since it is more likely to ask for clarification (S17).
+evidence revise the plan. The provider reports that it asks when more input could
+materially change the result, is more sensitive to instructions in skills and
+other files, tests thoroughly (broader than a small task needs) and tends toward
+detailed, formatted responses (S17). So: state which decisions are already
+authorized; check that STATE, HANDOFF, repository instructions and loaded skills
+do not conflict; say which checks suffice for a small change; and state the report
+shape you want.
 
 ## Resources and latency
 

@@ -8,7 +8,8 @@ IDs refer to [Sources](../sources.md); facts were consulted on 2026-09-29.
 
 - Google API ID `gemini-3.8-flash`: "Our most intelligent Flash model, engineered
   for long-horizon software engineering, autonomous agents, and complex enterprise
-  workflows." (S15)
+  workflows." (S15) Its model card lists cost-effective scaling of production
+  agents, software engineering, agentic workflows and knowledge work (S24).
 
 ## Consider for (Guidance)
 
@@ -31,7 +32,9 @@ handoffs suffice; XML and exact signatures are not universal requirements.
 
 ## Resources and latency
 
-- Documented: it can use more tokens on longer, complex tasks by design (S15).
+- Documented: it can use more tokens on longer, complex tasks by design (S15);
+  the model card lists occasional slowness or timeouts (S24). Preserve partial
+  work in the handoff before a long run.
 - Unknown: consumption on a given subscription plan.
 
 ## Effort by interface

@@ -8,6 +8,10 @@ IDs refer to [Sources](../sources.md); facts were consulted on 2026-09-29.
 
 - Anthropic API ID `claude-opus-4-8`. Legacy, still available; the provider
   suggests migrating to Claude Opus 5.5 (S13).
+- Provider-reported behavior (S23): strengths in long-horizon agentic work and
+  knowledge work; interprets instructions literally, especially at lower effort;
+  spawns fewer subagents by default; better bug-finding than prior models, but
+  review prompts that filter by severity lower what it reports.
 
 ## Consider for (Guidance)
 
@@ -22,6 +26,15 @@ IDs refer to [Sources](../sources.md); facts were consulted on 2026-09-29.
 
 Supply the same objective and evidence contract as for other models, plus
 relevant library documentation where its knowledge may be stale.
+
+- Put the task, intent and constraints in the first turn rather than across
+  several (S23).
+- State the scope of an instruction explicitly; it does not generalize one item's
+  instruction to others (S23).
+- If reasoning looks shallow on a hard item, raise effort rather than prompting
+  around it (S23).
+- For review, ask for every finding with severity and confidence, and filter
+  afterwards (S23).
 
 ## Resources and latency
 

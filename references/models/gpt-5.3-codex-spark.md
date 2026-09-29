@@ -23,7 +23,9 @@ IDs refer to [Sources](../sources.md).
 ## Handoff adaptations (Guidance)
 
 Carry the reproduction, relevant contracts, non-goals and the specific validation
-needed. Do not assume tests run automatically.
+needed. Do not assume tests run automatically. If the change turns out to cross
+boundaries, escalate instead of enlarging the unit; speed does not replace an
+independent review.
 
 ## Resources and latency
 
